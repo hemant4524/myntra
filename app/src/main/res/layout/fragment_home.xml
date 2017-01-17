@@ -1,73 +1,235 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.github.florent37.parallax.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fh_svMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.ob.myntra.ui.fragment.HomeFragment">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_marginTop="110dp"
+            android:orientation="vertical"
+            tools:context="com.ob.myntra.ui.fragment.HomeFragment">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_men" />
-        </android.support.v7.widget.CardView>
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view1"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/home_banner_1"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
 
-        <android.support.v7.widget.CardView
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view2"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/home_banner_2"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view3"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/home_banner_3"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view4"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/home_banner_pape"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view5"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/ic_kids"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view6"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/ic_women"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/my_image_view7"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@color/transparent"
+                fresco:fadeDuration="300"
+                fresco:failureImage="@drawable/ic_error"
+                fresco:failureImageScaleType="centerInside"
+                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:placeholderImage="@drawable/ic_home"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:pressedStateOverlayImage="@color/red"
+                fresco:progressBarAutoRotateInterval="1000"
+                fresco:progressBarImage="@drawable/ic_launcher"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="false"
+                fresco:roundBottomLeft="false"
+                fresco:roundBottomRight="true"
+                fresco:roundTopLeft="true"
+                fresco:roundTopRight="false"
+                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundedCornerRadius="1dp"
+                fresco:roundingBorderColor="@color/border_color"
+                fresco:roundingBorderWidth="2dp" />
+        </LinearLayout>
+
+        <com.github.florent37.parallax.ParallaxView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:parallaxVertical="0.9"
+            android:background="@color/toolbar_bg">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_women" />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_kids" />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_men" />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_women" />
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_kids" />
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
-</ScrollView>
+            <include
+                layout="@layout/top_horizontal_scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:visibility="visible"
+                />
+        </com.github.florent37.parallax.ParallaxView>
+    </FrameLayout>
+</com.github.florent37.parallax.ScrollView>

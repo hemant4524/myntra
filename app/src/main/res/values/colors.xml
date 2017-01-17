@@ -16,6 +16,7 @@
     <color name="search_field_bg">@color/white_ish</color>
 
     <color name="transparent">#00FFFFFF</color>
+    <color name="toolbar_bg">#FFFFFF</color>
 
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
@@ -39,4 +40,9 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
+    <color name="wait_color">#502928</color>
+    <color name="blue">#2196F3</color>
+    <color name="red">#F44336</color>
+    <color name="corner_color">#9E9E9E</color>
+    <color name="border_color">#424242</color>
 </resources>

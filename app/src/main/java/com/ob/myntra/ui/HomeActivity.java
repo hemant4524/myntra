@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,8 +15,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -26,8 +23,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.ob.myntra.R;
-import com.ob.myntra.ui.adapter.TopHorizontalScrollAdapter;
 import com.ob.myntra.ui.fragment.HomeFragment;
 import com.ob.myntra.ui.fragment.MainMenuFragment;
 import com.ob.myntra.ui.lib.search.MaterialSearchView;
@@ -41,8 +38,6 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
     private MaterialSearchView searchView;
-    private RecyclerView mrvTopHorizontalScroll;
-    private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +57,8 @@ public class HomeActivity extends AppCompatActivity {
         }*/
 
         setContentView(R.layout.activity_home);
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.id_appbar);
-        appBarLayout.findViewById(R.id.tvsi_ivHeader);
+
+        Fresco.initialize(this);
 
         // Set a Toolbar to replace the ActionBar.
         setToolBar();
@@ -73,12 +68,7 @@ public class HomeActivity extends AppCompatActivity {
         setSearchView();
 
 
-        mrvTopHorizontalScroll = (RecyclerView)findViewById(R.id.thsl_recyclerView);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
-        mrvTopHorizontalScroll.setLayoutManager(layoutManager);
-        TopHorizontalScrollAdapter topHorizontalScrollAdapter = new TopHorizontalScrollAdapter(this);
-        mrvTopHorizontalScroll.setAdapter(topHorizontalScrollAdapter);
 
 
         // Set drawer menu adapter and list
@@ -87,18 +77,13 @@ public class HomeActivity extends AppCompatActivity {
         // Set fragment
         setFragment();
 
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
-        mCollapsingToolbarLayout.setTitleEnabled(false);
+       // mCollapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
+       // mCollapsingToolbarLayout.setTitleEnabled(false);
+
 
     }
 
-    @Override
-    public void setTitle(CharSequence title) {
-        if (title != null && !title.toString().isEmpty()) {
 
-            mCollapsingToolbarLayout.setTitle("Myntra");
-        }
-    }
     private void setSearchView() {
 
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
@@ -169,7 +154,6 @@ public class HomeActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
