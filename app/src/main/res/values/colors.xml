@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ece9e9</color>
+    <color name="colorPrimaryDark">#FF4B4E53</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="navBarColor">#FF1B202A</color>
+    <color name="menu_font_color">#FF535864</color>
+    <color name="lightGray">#f2d6d6</color>
+
+    <!-- Login color-->
+    <color name="loginColorPrimary">#00bcd4</color>
+    <color name="loginColorPrimaryDark">#0097a7</color>
+    <color name="loginColorAccent">#f2fe71</color>
+    <!-- Search view color-->
+    <color name="search_layover_bg">@color/gray</color>
+    <color name="search_field_bg">@color/white_ish</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="gray">#ff888888</color>
+
+    <color name="white_50">#88ffffff</color>
+    <color name="black_50">#88000000</color>
+    <color name="gray_50">#88888888</color>
+
+    <color name="white_ish">#fffefefe</color>
+
+    <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#428bca</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
+</resources>

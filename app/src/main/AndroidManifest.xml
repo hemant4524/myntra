@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ob.myntra">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.HomeActivity" />
+
+        <provider
+            android:name=".ui.lib.search.db.HistoryProvider"
+            android:authorities="com.ob.myntra.productsearchview.defaultsearchhistorydatabase"
+            android:exported="false"
+            android:protectionLevel="signature"
+            android:syncable="true" />
+
+        <activity android:name=".ui.SearchActivity" />
+        <activity
+            android:name=".ui.SignupActivity"
+            android:theme="@style/Login">
+
+        </activity>
+        <activity android:name=".ui.ResetPasswordActivity" />
+        <activity android:name=".ui.LoginActivity"
+            android:theme="@style/Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
