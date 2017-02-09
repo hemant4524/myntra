@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fh_svMain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.ob.myntra.ui.fragment.HomeFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="110dp"
             android:orientation="vertical"
-            tools:context="com.ob.myntra.ui.fragment.HomeFragment">
+            android:background="@color/gray_50">
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/my_image_view1"
@@ -28,8 +29,7 @@
                 fresco:backgroundImage="@color/transparent"
                 fresco:fadeDuration="300"
                 fresco:failureImage="@drawable/ic_error"
-                fresco:failureImageScaleType="centerInside"
-                fresco:overlayImage="@drawable/ic_water_mark"
+                fresco:failureImageScaleType="center"
                 fresco:placeholderImage="@drawable/home_banner_1"
                 fresco:placeholderImageScaleType="fitCenter"
                 fresco:pressedStateOverlayImage="@color/red"
@@ -42,10 +42,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp" />
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/my_image_view2"
@@ -70,10 +70,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp" />
 
 
             <com.facebook.drawee.view.SimpleDraweeView
@@ -99,10 +99,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp"/>
 
 
             <com.facebook.drawee.view.SimpleDraweeView
@@ -128,10 +128,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp"/>
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/my_image_view5"
@@ -156,10 +156,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp" />
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/my_image_view6"
@@ -184,10 +184,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp" />
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/my_image_view7"
@@ -212,10 +212,10 @@
                 fresco:roundBottomRight="true"
                 fresco:roundTopLeft="true"
                 fresco:roundTopRight="false"
-                fresco:roundWithOverlayColor="@color/corner_color"
+                fresco:roundWithOverlayColor="@color/gray"
                 fresco:roundedCornerRadius="1dp"
-                fresco:roundingBorderColor="@color/border_color"
-                fresco:roundingBorderWidth="2dp" />
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="20dp" />
         </LinearLayout>
 
         <com.github.florent37.parallax.ParallaxView

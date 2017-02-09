@@ -7,9 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.ob.myntra.R;
 import com.ob.myntra.ui.vo.HorizontalListVo;
 
@@ -44,7 +44,7 @@ public class TopHorizontalScrollAdapter extends RecyclerView.Adapter<TopHorizont
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
                     holder.title.setText(lists.get(position).getName());
-                    holder.image.setImageDrawable(lists.get(position).getDrawable());
+                    holder.image.setBackground(lists.get(position).getDrawable());
     }
 
     @Override
@@ -54,11 +54,11 @@ public class TopHorizontalScrollAdapter extends RecyclerView.Adapter<TopHorizont
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         private TextView title;
-        private ImageView image;
+        private SimpleDraweeView image;
         public ItemViewHolder(View itemView) {
             super(itemView);
            title = (TextView) itemView.findViewById(R.id.tvsi_tvTitleName);
-           image = (ImageView) itemView.findViewById(R.id.tvsi_ivHeader);
+           image = (SimpleDraweeView) itemView.findViewById(R.id.tvsi_ivHeader);
         }
     }
 

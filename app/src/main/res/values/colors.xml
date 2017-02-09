@@ -9,7 +9,7 @@
 
     <!-- Login color-->
     <color name="loginColorPrimary">#00bcd4</color>
-    <color name="loginColorPrimaryDark">#0097a7</color>
+    <color name="loginColorPrimaryDark">#105259</color>
     <color name="loginColorAccent">#f2fe71</color>
     <!-- Search view color-->
     <color name="search_layover_bg">@color/gray</color>

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
@@ -17,6 +17,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,7 +25,12 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.ob.myntra.R;
+import com.ob.myntra.ui.activity.UserProfileActivity;
 import com.ob.myntra.ui.fragment.HomeFragment;
 import com.ob.myntra.ui.fragment.MainMenuFragment;
 import com.ob.myntra.ui.lib.search.MaterialSearchView;
@@ -37,12 +43,17 @@ import java.util.ArrayList;
  */
 
 public class HomeActivity extends AppCompatActivity {
+    private String TAG = HomeActivity.class.getSimpleName();
     private MaterialSearchView searchView;
+    private FirebaseDatabase mFirebaseInstance;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+        super.onCreate(savedInstanceState);
         /***
          * Change navigation bar color
          */
@@ -80,9 +91,36 @@ public class HomeActivity extends AppCompatActivity {
        // mCollapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
        // mCollapsingToolbarLayout.setTitleEnabled(false);
 
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
 
+
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAuth.removeAuthStateListener(mAuthListener);
+    }
 
     private void setSearchView() {
 
@@ -172,7 +210,19 @@ public class HomeActivity extends AppCompatActivity {
                 // Open the search view on the menu item click.
 
                 searchView.openSearch();
-                return true;
+
+            case R.id.action_profile:
+                FirebaseUser user = mAuth.getCurrentUser();
+                if(user!= null)
+                {
+                    Toast.makeText(this, ""+user.getEmail()+" logout successfully!!!!", Toast.LENGTH_SHORT).show();
+                    FirebaseAuth.getInstance().signOut();
+                }
+            case R.id.action_cart:
+
+                startActivity(new Intent(HomeActivity.this, UserProfileActivity.class));
+
+                return  true;
         }
 
         return super.onOptionsItemSelected(item);

@@ -9,6 +9,7 @@
         <item name="android:textColorPrimary">#FF686D78</item>
         <item name="android:textColorHint">#9e9fa1</item>
         <item name="android:actionMenuTextColor">#6c136c</item>
+        <item name="android:windowDisablePreview">true</item>
 
     </style>
     <style name="Login" parent="Theme.AppCompat.Light.NoActionBar">
