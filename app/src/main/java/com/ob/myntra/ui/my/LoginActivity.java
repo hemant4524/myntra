@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class LoginActivity extends AppCompatActivity {
-    public static final String PREF_KEY_FIRST_START = "com.heinrichreimersoftware.materialintro.demo.PREF_KEY_FIRST_START";
+    public static final String PREF_KEY_FIRST_START = "com.ob.myntra.PREF_KEY_FIRST_START";
     public static final int REQUEST_CODE_INTRO = 1;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;

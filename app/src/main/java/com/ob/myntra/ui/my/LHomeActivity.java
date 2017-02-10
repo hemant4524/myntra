@@ -1,6 +1,5 @@
 package com.ob.myntra.ui.my;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
@@ -10,7 +9,9 @@ import android.widget.Toast;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.app.NavigationPolicy;
 import com.heinrichreimersoftware.materialintro.app.OnNavigationBlockedListener;
+import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
+import com.heinrichreimersoftware.materialintro.slide.Slide;
 import com.ob.myntra.R;
 
 public class LHomeActivity extends IntroActivity {
@@ -22,11 +23,12 @@ public class LHomeActivity extends IntroActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         boolean fullscreen = true;
-        boolean showBack = true;
-        boolean showNext = true;
+        boolean showBack = false;
+        boolean showNext = false;
         boolean skipEnabled = false;
         boolean finishEnabled = true;
         boolean getStartedEnabled = true;
+        boolean pageIndicatorEnabled = true;
 
 
         super.onCreate(savedInstanceState);
@@ -40,20 +42,27 @@ public class LHomeActivity extends IntroActivity {
         setButtonNextVisible(showNext);
         setButtonCtaVisible(getStartedEnabled);
         setButtonCtaTintMode(BUTTON_CTA_TINT_MODE_TEXT);
+        setPagerIndicatorVisible(pageIndicatorEnabled);
 
-        /* Add a navigation policy to define when users can go forward/backward */
-        setNavigationPolicy(new NavigationPolicy() {
-            @Override
-            public boolean canGoForward(int position) {
-                return true;
-            }
 
-            @Override
-            public boolean canGoBackward(int position) {
-                return true;
-            }
-        });
 
+        // Custom intro screen first slide
+        final Slide firstSlide = new FragmentSlide.Builder()
+                    .background(R.color.red)
+                    .backgroundDark(R.color.gray)
+                    .fragment(ScreenOneSlide.newInstance())
+                    .buttonCtaLabel("Do start")
+                    .build();
+            addSlide(firstSlide);
+
+        // Custom intro screen second screen
+        final Slide secondSlide = new FragmentSlide.Builder()
+                .background(R.color.red)
+                .backgroundDark(R.color.gray)
+                .fragment(ScreenTwoSlide.newInstance())
+                .buttonCtaLabel("Do start")
+                .build();
+        addSlide(secondSlide);
         /**
          * Standard slide (like Google's intros)
          */
@@ -106,6 +115,22 @@ public class LHomeActivity extends IntroActivity {
                 .scrollable(scrollable)
                 .build());
 
+          /* Add a navigation policy to define when users can go forward/backward */
+        setNavigationPolicy(new NavigationPolicy() {
+            @Override
+            public boolean canGoForward(int position) {
+                return true;
+            }
+
+            @Override
+            public boolean canGoBackward(int position) {
+                return true;
+            }
+        });
+
+
+
+
         /* Add a listener to detect when users try to go to a page they can't go to */
         addOnNavigationBlockedListener(new OnNavigationBlockedListener() {
             @Override
@@ -122,9 +147,7 @@ public class LHomeActivity extends IntroActivity {
             @Override
             public void onPageSelected(int position) {
 
-                if(position == 3 ){
-                    startActivity(new Intent(LHomeActivity.this, com.ob.myntra.ui.LoginActivity.class));
-                }
+
             }
 
             @Override
@@ -132,4 +155,6 @@ public class LHomeActivity extends IntroActivity {
             }
         });
     }
+
+
 }

@@ -27,7 +27,7 @@
         <activity android:name=".ui.ResetPasswordActivity" />
         <activity
             android:name=".ui.LoginActivity"
-            android:theme="@style/Login"></activity>
+            android:theme="@style/Login" />
         <activity android:name=".ui.activity.CompanyWiseProductListActivity" />
 
         <service android:name=".ui.service.MyFirebaseMessagingService">
@@ -44,15 +44,22 @@
         <activity android:name=".ui.activity.UserProfileActivity" />
         <activity
             android:name=".ui.my.LHomeActivity"
-            android:theme="@style/Theme.Intro">
+            android:theme="@style/Theme.Intro"/>
 
-        </activity>
+
         <activity android:name=".ui.my.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.my.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/HomeAppTheme"/>
+
+
     </application>
 
 </manifest>
